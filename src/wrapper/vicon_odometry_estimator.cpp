@@ -29,7 +29,8 @@ ViconOdometryEstimator::ViconOdometryEstimator(ros::NodeHandle& nh)
     : vicon_estimator_(), verbose_(kDefaultVerboseFlag) {
   // Creating publisher for intermediate estimator values
   publisher_ = nh.advertise<ros_vrpn_client::viconEstimator>(
-      "vicon_intermediate_results", 100);
+                                                             //      "vicon_intermediate_results", 100);
+      "/vicon_intermediate_results", 100);
 }
 
 void ViconOdometryEstimator::initializeParameters(ros::NodeHandle& nh) {

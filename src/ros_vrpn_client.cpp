@@ -105,11 +105,14 @@ class Rigid_Body {
              const std::string& object_name) {
     // Advertising published topics.
     measured_target_transform_pub_ =
-        nh.advertise<geometry_msgs::TransformStamped>("raw_transform", 1);
+      //        nh.advertise<geometry_msgs::TransformStamped>("raw_transform", 1);
+        nh.advertise<geometry_msgs::TransformStamped>("/raw_transform", 1);
     estimated_target_transform_pub_ =
-        nh.advertise<geometry_msgs::TransformStamped>("estimated_transform", 1);
+      //        nh.advertise<geometry_msgs::TransformStamped>("estimated_transform", 1);
+        nh.advertise<geometry_msgs::TransformStamped>("/estimated_transform", 1);
     estimated_target_odometry_pub_ =
-        nh.advertise<nav_msgs::Odometry>("estimated_odometry", 1);
+      //        nh.advertise<nav_msgs::Odometry>("estimated_odometry", 1);
+        nh.advertise<nav_msgs::Odometry>("/estimated_odometry", 1);
     // Connecting to the vprn device and creating an associated tracker.
     std::stringstream connection_name;
     connection_name << server_ip << ":" << port;
